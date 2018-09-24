@@ -1,13 +1,7 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, View } from 'react-native';
+
+import TabMaster from './src/components/tabMaster';
 import LoginPage from './src/components/login/login';
 
 // type Props = {};
@@ -15,7 +9,8 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <LoginPage/>
+        <TabMaster/>
+        {/* <LoginPage/> */}
       </View>
     );
   }
