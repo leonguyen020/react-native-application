@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import { createMaterialTopTabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons'
-// import FontAwesome, { Icons } from 'react-native-fontawesome';
 
 import HomeScreen from './general-layout/home';
 import SettingsScreen from './general-layout/settings';
@@ -30,9 +29,6 @@ const AppTabNavigator = createMaterialTopTabNavigator({
             tabBarLabel: 'Home',
             tabBarIcon: ({ tintColor }) => (
             <Icon name="ios-home" color={tintColor} size={24} />
-            // <FontAwesome color={tintColor} size={24}>
-            //     {Icons.home}
-            // </FontAwesome>
             )
         }
     },
@@ -42,9 +38,6 @@ const AppTabNavigator = createMaterialTopTabNavigator({
           tabBarLabel: 'Settings',
           tabBarIcon: ({ tintColor }) => (
             <Icon name="ios-settings" color={tintColor} size={24} />
-            // <FontAwesome color={tintColor} size={24}>
-            //     {Icons.Settings}
-            // </FontAwesome>
           )
         }
     }
