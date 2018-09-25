@@ -19,7 +19,7 @@ export default class CalendarPage extends Component {
           </Text>
         </View>
 
-        <Calendar
+        {/* <Calendar
           // Initially visible month. Default = Date()
           current={'2018-09-25'}
           // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
@@ -47,7 +47,7 @@ export default class CalendarPage extends Component {
           onPressArrowLeft={substractMonth => substractMonth()}
           // Handler which gets executed when press arrow icon left. It receive a callback can go next month
           onPressArrowRight={addMonth => addMonth()}
-        />
+        /> */}
 
       </View>
     );
