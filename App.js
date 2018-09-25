@@ -9,8 +9,8 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TabMaster/>
-        {/* <LoginPage/> */}
+        {/* <TabMaster/> */}
+        <LoginPage/>
       </View>
     );
   }
@@ -21,15 +21,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     backgroundColor: '#3498db',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  }
 });
