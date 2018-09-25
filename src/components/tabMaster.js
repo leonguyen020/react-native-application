@@ -4,6 +4,7 @@ import { createMaterialTopTabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons'
 
 import HomeScreen from './general-layout/home';
+import CalendarsScreen from './general-layout/calendars';
 import SettingsScreen from './general-layout/settings';
 
 export default class componentName extends Component {
@@ -30,6 +31,15 @@ const AppTabNavigator = createMaterialTopTabNavigator({
             tabBarIcon: ({ tintColor }) => (
             <Icon name="ios-home" color={tintColor} size={24} />
             )
+        }
+    },
+    Calendar: {
+        screen: CalendarsScreen,
+        navigationOptions: {
+          tabBarLabel: 'Calendar',
+          tabBarIcon: ({ tintColor }) => (
+            <Icon name="ios-calendar" color={tintColor} size={24} />
+          )
         }
     },
     Settings: {
