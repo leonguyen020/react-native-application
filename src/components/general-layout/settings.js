@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import Settings from '../settings/settings';
 
 export default class SettingsPage extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ export default class SettingsPage extends Component {
   render() {
     return (
       <View>
-        <Text> Settings Page </Text>
+        <Settings />
       </View>
     );
   }
