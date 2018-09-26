@@ -4,7 +4,6 @@ import {
     Text,
     StyleSheet,
     TouchableOpacity,
-    TextInput
 } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import moment from 'moment';
@@ -96,7 +95,13 @@ export default class componentName extends Component {
                     accessible={true}
                     scrollViewAccessibilityLabel={'Scrollable options'}
                     cancelButtonAccessibilityLabel={'Cancel Button'}
-                    onChange={(option)=>{ this.setState({chosenType:option.label})}}
+                    onChange={
+                        (option) => { 
+                            this.setState(
+                                {chosenType:option.label}
+                            )
+                        }
+                    }
                 >
 
                     <TouchableOpacity style={styles.button}>

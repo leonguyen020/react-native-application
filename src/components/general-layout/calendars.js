@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
+import { Calendar } from 'react-native-calendars';
+import moment from 'moment';
 
 export default class CalendarPage extends Component {
   constructor(props) {
@@ -10,6 +11,7 @@ export default class CalendarPage extends Component {
   }
 
   render() {
+    let currentDate = moment().format("YYYY-MM-DD");
     return (
       <View>
         
@@ -19,11 +21,17 @@ export default class CalendarPage extends Component {
           </Text>
         </View>
 
-        {/* <Calendar
+        <Calendar
+          markedDates={{
+            '2018-09-30': {selected: true, marked: true, selectedColor: 'blue'},
+            '2018-10-01': {marked: true},
+            '2018-10-15': {marked: true, dotColor: 'red', activeOpacity: 0},
+            '2018-10-20': {disabled: true, disableTouchEvent: true}
+          }}
           // Initially visible month. Default = Date()
-          current={'2018-09-25'}
+          current={currentDate}
           // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
-          minDate={'2018-09-25'}
+          minDate={currentDate}
           // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
           maxDate={'2020-10-01'}
           // Handler which gets executed on day press. Default = undefined
@@ -47,7 +55,8 @@ export default class CalendarPage extends Component {
           onPressArrowLeft={substractMonth => substractMonth()}
           // Handler which gets executed when press arrow icon left. It receive a callback can go next month
           onPressArrowRight={addMonth => addMonth()}
-        /> */}
+        />
+        
 
       </View>
     );
