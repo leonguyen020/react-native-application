@@ -4,8 +4,11 @@ import {
     Text,
     StyleSheet,
     TouchableOpacity,
+    TextInput
 } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
+import moment from 'moment';
+import ModalSelector from 'react-native-modal-selector';
 
 export default class componentName extends Component {
     constructor(props) {
@@ -15,9 +18,10 @@ export default class componentName extends Component {
             isTimePickerVisible:false,
             modalIsOpened:false,
 
-            bookingType:'',
-            bookingDate:'',
-            bookingTime:'',
+            chosenType:'',
+            chosenDate:'',
+            chosenTime:'',
+            
         };
         this.showModal = this.showModal.bind(this);
 
@@ -40,7 +44,8 @@ export default class componentName extends Component {
     // Date picker
     _handleDatePicked(date){
         this.setState({
-            bookingDate: date.toString().substr(0,15),
+            // bookingDate: date.toString().substr(0,15),
+            chosenDate: moment(date).format('MMMM Do YYYY')
         })
         this._hideDatePicker();
     };
@@ -59,7 +64,8 @@ export default class componentName extends Component {
     // Time picker
     _handleTimePicked(time){
         this.setState({
-            bookingTime: time.toString().substr(16),
+            // bookingTime: time.toString().substr(16),
+            chosenTime: moment(time).format('HH:mm')
         })
         this._hideTimePicker();
     }
@@ -75,17 +81,33 @@ export default class componentName extends Component {
     }
 
     render() {
+        let index = 0;
+        const data = [
+            { key: index++, section: true, label: 'Please choose either one of them' },
+            { key: index++, label: 'Event' },
+            { key: index++, label: 'Consultant' },
+        ];
         return (
             <View style={styles.container}>
                 {/* Type */}
-                <TouchableOpacity onPress={this.showModal} style={styles.button}>
-                    <Text style={styles.buttonText}>
-                        Choose your type
-                    </Text>
-                </TouchableOpacity>
+                <ModalSelector
+                    data={data}
+                    supportedOrientations={['portrait']}
+                    accessible={true}
+                    scrollViewAccessibilityLabel={'Scrollable options'}
+                    cancelButtonAccessibilityLabel={'Cancel Button'}
+                    onChange={(option)=>{ this.setState({chosenType:option.label})}}
+                >
 
+                    <TouchableOpacity style={styles.button}>
+                        <Text style={styles.buttonText}>
+                            Choose your type
+                        </Text>
+                    </TouchableOpacity>
+
+                </ModalSelector>
                 <Text style={styles.choosenText}>
-                    {this.state.bookingType.length > 0 ? "You have selected "+this.state.bookingType +" type" : null}
+                    {this.state.chosenType.length > 0 ? "You have selected "+this.state.chosenType +" type" : null}
                 </Text>
 
                 {/* Date */}
@@ -96,11 +118,13 @@ export default class componentName extends Component {
                 </TouchableOpacity>
                 <DateTimePicker 
                     mode={'date'}
+                    // maximumDate='December 31, 2020'
+                    // minimumDate={currentDate}
                     isVisible={this.state.isDatePickerVisible}
                     onConfirm={this._handleDatePicked}
                     onCancel={this._hideDatePicker} />
                 <Text style={styles.choosenText}>
-                    {this.state.bookingDate && this.state.bookingDate.length > 0 ? "You have selected "+this.state.bookingDate : null}
+                    {this.state.chosenDate && this.state.chosenDate.length > 0 ? "You have selected "+this.state.chosenDate : null}
                 </Text>
 
                 {/* Time */}
@@ -111,12 +135,29 @@ export default class componentName extends Component {
                 </TouchableOpacity>
                 <DateTimePicker 
                     mode={'time'}
+                    minuteInterval={15}
                     isVisible={this.state.isTimePickerVisible}
                     onConfirm={this._handleTimePicked}
                     onCancel={this._hideTimePicker} />
                 <Text style={styles.choosenText}>
-                    {this.state.bookingTime && this.state.bookingTime.length > 0 ? "You have selected "+this.state.bookingTime : null}
+                    {this.state.chosenTime && this.state.chosenTime.length > 0 ? "You have selected "+this.state.chosenTime : null}
                 </Text>
+                <View style={styles.rowContainer}>
+                    <View>
+                        <TouchableOpacity style={styles.cancelBtn}>
+                            <Text style={styles.btnText}>
+                                Cancel
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View>
+                        <TouchableOpacity style={styles.submitBtn}>
+                            <Text style={styles.btnText}>
+                                Submit
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
             </View>
         );
     }
@@ -124,7 +165,7 @@ export default class componentName extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flex: 2,
         justifyContent: 'center',
         paddingHorizontal: 10,
         alignItems: 'center',
@@ -146,5 +187,33 @@ const styles = StyleSheet.create({
         color: '#d35400',
         fontSize: 15,
         fontWeight: '700',
+    },
+    rowContainer:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
+    cancelBtn:{
+        alignItems: 'center',
+        backgroundColor: '#EA2027',
+        padding: 20,
+        margin: 20,
+        width:150,
+        justifyContent: 'center',
+        borderRadius: 20,
+    },
+    submitBtn:{
+        alignItems: 'center',
+        backgroundColor: '#0652DD',
+        padding: 20,
+        margin: 20,
+        width:150,
+        justifyContent: 'center',
+        borderRadius: 20,
+    },
+    btnText:{
+        color:'#FFF',
+        fontSize: 20,
+        fontWeight:'700'
     }
 })
