@@ -52,7 +52,7 @@ const AppTabNavigator = createMaterialTopTabNavigator({
         }
     }
 },{
-    initialRouteName: 'Home',
+    initialRouteName: 'Settings',
     // order: ['Settings', 'Home'],
     tabBarPosition: 'bottom',
     swipeEnabled: true,
