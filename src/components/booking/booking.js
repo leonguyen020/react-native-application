@@ -4,10 +4,11 @@ import {
     Text,
     StyleSheet,
     TouchableOpacity,
+    TextInput
 } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import moment from 'moment';
-
+import ModalSelector from 'react-native-modal-selector';
 
 export default class componentName extends Component {
     constructor(props) {
@@ -80,16 +81,30 @@ export default class componentName extends Component {
     }
 
     render() {
-        
+        let index = 0;
+        const data = [
+            { key: index++, section: true, label: 'Please choose either one of them' },
+            { key: index++, label: 'Event' },
+            { key: index++, label: 'Consultant' },
+        ];
         return (
             <View style={styles.container}>
                 {/* Type */}
-                <TouchableOpacity onPress={this.showModal} style={styles.button}>
-                    <Text style={styles.buttonText}>
-                        Choose your type
-                    </Text>
-                </TouchableOpacity>
+                <ModalSelector
+                    data={data}
+                    supportedOrientations={['portrait']}
+                    accessible={true}
+                    scrollViewAccessibilityLabel={'Scrollable options'}
+                    cancelButtonAccessibilityLabel={'Cancel Button'}
+                    onChange={(option)=>{ this.setState({chosenType:option.label})}}>
 
+                    <TouchableOpacity style={styles.button}>
+                        <Text style={styles.buttonText}>
+                            Choose your type
+                        </Text>
+                    </TouchableOpacity>
+
+                </ModalSelector>
                 <Text style={styles.choosenText}>
                     {this.state.chosenType.length > 0 ? "You have selected "+this.state.chosenType +" type" : null}
                 </Text>
