@@ -1,19 +1,14 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import Settings from '../settings/settings';
+import Menu from '../settings/menu';
+import Profile from '../settings/profile'
+import Notifications from '../settings/notifications'
+import {
+  createStackNavigator,
+} from 'react-navigation';
 
-export default class SettingsPage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+const SettingsPage = createStackNavigator({
+  Home: { screen: Menu },
+  Profile: { screen: Profile },
+  Notifications: { screen: Notifications },
+});
 
-  render() {
-    return (
-      <View>
-        <Settings />
-      </View>
-    );
-  }
-}
+export default SettingsPage;
