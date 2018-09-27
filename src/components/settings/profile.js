@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
 import { SectionList, View, Text, StyleSheet } from 'react-native';
+import NavigationBar from 'react-native-navigation-bar';
 
 export default class Profile extends Component {
   static navigationOptions = { title: 'Profile' }
 
   render() {
+    
     return (
       <View style={styles.container}>
+        
+        <NavigationBar 
+          title={'this is a test'}
+          height={44}
+          titleColor={'#fff'}
+          backgroundColor={'#149be0'}
+          leftButtonIcon={}
+          leftButtonTitle={'back'}
+          onLeftButtonPress={()=>{}}
+        />
         <SectionList
           sections={[
             { title: 'NAME', data: ['Innovation & Technology'] },

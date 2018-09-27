@@ -9,6 +9,8 @@ const SettingsPage = createStackNavigator({
   Home: { screen: Menu },
   Profile: { screen: Profile },
   Notifications: { screen: Notifications },
+},{
+  headerMode:'none'
 });
 
 export default SettingsPage;
