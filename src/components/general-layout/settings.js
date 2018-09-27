@@ -6,7 +6,7 @@ import {
 } from 'react-navigation';
 
 const SettingsPage = createStackNavigator({
-  Home: { screen: Menu },
+  SettingMenu: { screen: Menu },
   Profile: { screen: Profile },
   Notifications: { screen: Notifications },
 },{

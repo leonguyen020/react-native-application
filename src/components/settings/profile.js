@@ -1,36 +1,51 @@
 import React, { Component } from 'react';
-import { SectionList, View, Text, StyleSheet } from 'react-native';
-import NavigationBar from 'react-native-navigation-bar';
+import { 
+  SectionList,
+  View,
+  Text,
+  StyleSheet,
+  Dimensions
+} from 'react-native';
+import NavigationBar from 'react-native-navbar';
+
+const {width,height} = Dimensions.get('screen');
 
 export default class Profile extends Component {
   static navigationOptions = { title: 'Profile' }
 
   render() {
+    const { navigate } = this.props.navigation;
+    const leftButtonConfig = {
+      title: 'Back',
+      handler: () => navigate('SettingMenu'),
+    };
     
+    const titleConfig = {
+      title: 'Profile',
+      style:{paddingBottom:height/80}
+    };
     return (
       <View style={styles.container}>
-        
-        <NavigationBar 
-          title={'this is a test'}
-          height={44}
-          titleColor={'#fff'}
-          backgroundColor={'#149be0'}
-          leftButtonIcon={}
-          leftButtonTitle={'back'}
-          onLeftButtonPress={()=>{}}
+        <NavigationBar
+          containerStyle={{backgroundColor:'#bdc3c7',height:height/9.5,marginBottom: height/30,}}
+          style={{paddingBottom:height/80}}
+          title={titleConfig}
+          leftButton={leftButtonConfig}
         />
-        <SectionList
-          sections={[
-            { title: 'NAME', data: ['Innovation & Technology'] },
-            { title: 'ESTABLISHED', data: ['5/4/2018'] },
-            { title: 'PRESIDENT', data: ['Nguyen Huu Tri'] },
-            { title: 'VICE PRESIDENT', data: ['Nguyen Huu Tri'] },
-            { title: 'CHIEF OF FINANCE', data: ['Nguyen Huu Tri'] }
-          ]}
-          renderItem={({ item }) => <Text style={styles.item}>{item}</Text>}
-          renderSectionHeader={({ section }) => <Text style={styles.sectionHeader}>{section.title}</Text>}
-          keyExtractor={(item, index) => index}
-        />
+        <View >
+          <SectionList
+            sections={[
+              { title: 'NAME', data: ['Innovation & Technology'] },
+              { title: 'ESTABLISHED', data: ['5/4/2018'] },
+              { title: 'PRESIDENT', data: ['Nguyen Huu Tri'] },
+              { title: 'VICE PRESIDENT', data: ['Nguyen Huu Tri'] },
+              { title: 'CHIEF OF FINANCE', data: ['Nguyen Huu Tri'] }
+            ]}
+            renderItem={({ item }) => <Text style={styles.item}>{item}</Text>}
+            renderSectionHeader={({ section }) => <Text style={styles.sectionHeader}>{section.title}</Text>}
+            keyExtractor={(item, index) => index}
+          />
+        </View>
       </View>
     );
   }
@@ -39,7 +54,7 @@ export default class Profile extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 22,
+    // paddingTop: 22,
 
   },
   sectionHeader: {
