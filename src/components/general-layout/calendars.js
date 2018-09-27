@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { 
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  Button
+} from 'react-native';
 import { Calendar } from 'react-native-calendars';
+import ActionButton from 'react-native-action-button';
 import moment from 'moment';
+// import BookingPage from '../booking/booking';
+
+var {width,height} = Dimensions.get('screen');
 
 export default class CalendarPage extends Component {
   constructor(props) {
@@ -12,6 +22,7 @@ export default class CalendarPage extends Component {
 
   render() {
     let currentDate = moment().format("YYYY-MM-DD");
+    var {navigate} = this.props.navigation;
     return (
       <View>
         
@@ -56,8 +67,16 @@ export default class CalendarPage extends Component {
           // Handler which gets executed when press arrow icon left. It receive a callback can go next month
           onPressArrowRight={addMonth => addMonth()}
         />
-        
-
+        <ActionButton
+          style={styles.actionBtn}
+          // position="left"
+          buttonColor="rgba(231,76,60,1)"
+          onPress={()=>navigate("Booking")}
+        />
+        {/* <Button
+          title="Book appointment"
+          onPress={()=>navigate("Booking")}
+        /> */}
       </View>
     );
   }
@@ -79,5 +98,10 @@ const styles = StyleSheet.create({
     width:160,
     textAlign:'center',
     // opacity:0.9
+  },
+  actionBtn:{
+    position:'absolute',
+    top:height/1.45,
+    right:0
   }
 })
