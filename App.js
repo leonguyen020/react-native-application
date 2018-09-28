@@ -10,7 +10,9 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TabMaster initialScreen='Calendar'/>
+        {/* <TabMaster initialScreen='Calendar'/> */}
+        <TabMaster initialScreen='Settings'/>
+
         {/* <LoginPage/> */}
         {/* <BookingPage/> */}
       </View>

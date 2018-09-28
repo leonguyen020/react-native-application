@@ -20,8 +20,8 @@ export default class Menu extends Component {
           
           <Touchable 
             bgColor={{ backgroundColor: 'skyblue' }} 
-            onPress={this.onPress} icon="ios-notifications" 
-            text="Notification" />
+            onPress={() => navigate('Notifications')} icon="ios-notifications" 
+            text="Notifications" />
         </View>
 
         <View style={styles.rowContainer}>

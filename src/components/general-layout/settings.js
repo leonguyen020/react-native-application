@@ -1,6 +1,6 @@
 import Menu from '../settings/menu';
 import Profile from '../settings/profile'
-import Notifications from '../settings/notifications'
+import Notifications from '../settings/thehell'
 import {
   createStackNavigator,
 } from 'react-navigation';
