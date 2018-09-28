@@ -71,11 +71,11 @@ export default class CalendarPage extends Component {
           style={styles.actionBtn}
           // position="left"
           buttonColor="rgba(231,76,60,1)"
-          onPress={()=>navigate("Booking")}
+          onPress={()=>navigate("BookingPage")}
         />
         {/* <Button
           title="Book appointment"
-          onPress={()=>navigate("Booking")}
+          onPress={()=>navigate("BookingPage")}
         /> */}
       </View>
     );

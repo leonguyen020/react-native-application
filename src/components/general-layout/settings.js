@@ -1,14 +1,27 @@
 import Menu from '../settings/menu';
-import Profile from '../settings/profile'
-import Notifications from '../settings/notifications'
+import Profile from '../settings/profile';
+import Notifications from '../settings/notifications';
+import BookingPage from '../booking/booking';
+
 import {
   createStackNavigator,
 } from 'react-navigation';
 
 const SettingsPage = createStackNavigator({
-  Home: { screen: Menu },
-  Profile: { screen: Profile },
-  Notifications: { screen: Notifications },
+  SettingMenu: { 
+    screen: Menu
+  },
+  Profile: {
+    screen: Profile
+  },
+  Notifications: {
+    screen: Notifications
+  },
+  BookingPage: {
+    screen:BookingPage
+  }
+},{
+  headerMode:'none'
 });
 
 export default SettingsPage;
