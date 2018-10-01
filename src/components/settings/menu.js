@@ -10,17 +10,16 @@ export default class Menu extends Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={{ marginTop: 120 }}>
-
+      <View style={styles.container}>
         <View style={[styles.rowContainer, styles.bottomMargin]}>
           <Touchable
             bgColor={{ backgroundColor: 'powderblue' }}
             onPress={() => navigate('Profile')}
             icon="ios-people" text="Profile" />
-          
-          <Touchable 
-            bgColor={{ backgroundColor: 'skyblue' }} 
-            onPress={() => navigate('Notifications')} icon="ios-notifications" 
+
+          <Touchable
+            bgColor={{ backgroundColor: 'skyblue' }}
+            onPress={() => navigate('Notifications')} icon="ios-notifications"
             text="Notifications" />
         </View>
 
@@ -28,19 +27,21 @@ export default class Menu extends Component {
           <Touchable bgColor={{ backgroundColor: 'steelblue' }} onPress={this.onPress} icon="ios-mail" text="Mail" />
           <Touchable bgColor={{ backgroundColor: 'lightsteelblue' }} onPress={this.onPress} icon="ios-trophy" text="Rankings" />
         </View>
-
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
+  container: {
+    marginTop: 80,
+  },
   rowContainer: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },
   bottomMargin: {
-    marginBottom: 160
+    marginBottom: 180
   }
 }) 

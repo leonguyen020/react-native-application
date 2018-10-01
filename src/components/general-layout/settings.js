@@ -8,7 +8,7 @@ import {
 } from 'react-navigation';
 
 const SettingsPage = createStackNavigator({
-  SettingMenu: { 
+  SettingMenu: {
     screen: Menu
   },
   Profile: {
@@ -18,10 +18,14 @@ const SettingsPage = createStackNavigator({
     screen: Notifications
   },
   BookingPage: {
-    screen:BookingPage
+    screen: BookingPage
   }
-},{
-  headerMode:'none'
-});
+},
+  {
+    // headerMode: 'none',
+    cardStyle: {backgroundColor:'#fff'}
+  },
+  
+);
 
 export default SettingsPage;

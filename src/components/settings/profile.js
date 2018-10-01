@@ -21,7 +21,7 @@ export default class Profile extends Component {
         _id: '1',
         id: 1,
         name: 'Innovation & Technology',
-        established: '04-05-2018',
+        established: '2018-05-04',
         pres: 3689251, //Account ID
         vice: 3689251, //Account ID
         chief: 3689251, //Account ID
@@ -47,12 +47,12 @@ export default class Profile extends Component {
 
     return (
       <View style={styles.container}>
-        <NavigationBar
+        {/* <NavigationBar
           containerStyle={{ backgroundColor: '#bdc3c7', height: height / 9.5, marginBottom: height / 30, }}
           style={{ paddingBottom: height / 80 }}
           title={titleConfig}
           leftButton={leftButtonConfig}
-        />
+        /> */}
         <View >
           <SectionList
             sections={[
@@ -75,16 +75,15 @@ export default class Profile extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // paddingTop: 22,
+    paddingTop: 22,
 
   },
   sectionHeader: {
     paddingTop: 2,
     paddingLeft: 20,
     paddingRight: 10,
-    paddingBottom: 2,
     fontSize: 12,
-    color: 'gray',
+    color: '#555',
     marginBottom: 4,
   },
   item: {
@@ -92,8 +91,11 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 10,
     paddingBottom: 12,
-    fontSize: 14,
-    backgroundColor: 'rgba(247,247,247,1.0)',
+    fontSize: 16,
     marginBottom: 16,
+    marginHorizontal: -1,
+    color: '#333',
+    borderColor: '#ccc',
+    borderWidth: 0.5,
   },
 })
