@@ -3,16 +3,10 @@ import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 
 export default class NotificationCell extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        };
-    }
-
     render() {
         return (
             <View style={styles.rowContainer}>
-                <Icon name={this.props.type=='Event'?'ios-flame':'ios-chatbubbles'}
+                <Icon name={this.props.type == 'Event' ? 'ios-flame' : 'ios-chatbubbles'}
                     size={28}
                     style={styles.iconContainer}
                 />

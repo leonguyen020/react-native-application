@@ -1,6 +1,7 @@
 import Menu from '../settings/menu';
 import Profile from '../settings/profile';
 import Notifications from '../settings/notifications';
+import Rankings from '../settings/rankings'
 import BookingPage from '../booking/booking';
 
 import {
@@ -17,15 +18,18 @@ const SettingsPage = createStackNavigator({
   Notifications: {
     screen: Notifications
   },
+  Rankings: {
+    screen: Rankings
+  },
   BookingPage: {
     screen: BookingPage
   }
 },
   {
     // headerMode: 'none',
-    cardStyle: {backgroundColor:'#fff'}
+    cardStyle: { backgroundColor: '#fff' }
   },
-  
+
 );
 
 export default SettingsPage;

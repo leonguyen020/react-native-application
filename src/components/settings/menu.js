@@ -25,7 +25,10 @@ export default class Menu extends Component {
 
         <View style={styles.rowContainer}>
           <Touchable bgColor={{ backgroundColor: 'steelblue' }} onPress={this.onPress} icon="ios-mail" text="Mail" />
-          <Touchable bgColor={{ backgroundColor: 'lightsteelblue' }} onPress={this.onPress} icon="ios-trophy" text="Rankings" />
+          <Touchable
+            bgColor={{ backgroundColor: 'lightsteelblue' }}
+            onPress={() => navigate('Rankings')} icon="ios-trophy"
+            text="Rankings" />
         </View>
       </View>
     )
