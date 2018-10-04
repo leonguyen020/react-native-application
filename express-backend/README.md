@@ -10,9 +10,13 @@ Respone will be a JSON
 
 Home URL: `https://clubmanagementsystem-express.herokuapp.com`
 
-Managing accounts `/users`
+======
 
-SIGN UP
+**Managing accounts** 
+
+`/users`
+
+**SIGN UP**
 
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/signup`
 
@@ -28,7 +32,7 @@ Request body:
 }
 ```
 
-LOGIN
+**LOGIN**
 
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/login`
 
@@ -44,7 +48,7 @@ Request body:
 }
 ```
 
-LIST ALL USERS
+**LIST ALL USERS**
 
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/`
 
@@ -67,7 +71,7 @@ Request body:
 ]
 ```
 
-DELETE USER 
+**DELETE USER**
 
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/_id_TARGET_ID`
 
