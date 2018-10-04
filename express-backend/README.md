@@ -281,3 +281,44 @@ Request URL: `https://clubmanagementsystem-express.herokuapp.com/schedules/_id`
 Request type: `DELETE`
 
 Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+
+---
+
+**MANAGE ACCESS LOGS DETAILS** `/accessAudits/
+
+**Create new schedule details**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/accessAudits`
+
+Request type: `POST`
+
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+
+Request body: 
+```
+{
+  "clubId": "String",
+  "accountId": "String",
+  "prevLogin": "String",
+  "prevLogout": "String",
+  "prevAction": "String",
+}
+```
+
+**List one audit details**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/accessAudits/_id`
+
+Request type: `GET`
+
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+
+**List all audits details**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/accessAudits/`
+
+Request type: `GET`
+
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+
+
