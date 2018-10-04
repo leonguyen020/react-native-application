@@ -12,9 +12,7 @@ Home URL: `https://clubmanagementsystem-express.herokuapp.com`
 
 ---
 
-**Managing accounts** 
-
-`/users`
+**Managing authoriaztion** `/users`
 
 **SIGN UP**
 
@@ -28,7 +26,8 @@ Request body:
 ```
 {
   "email": "String",
-  "password": "String"
+  "password": "String",
+  "accountId": "Number",
 }
 ```
 
@@ -48,6 +47,14 @@ Request body:
 }
 ```
 
+**LIST ONE USER**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/_id`
+
+Request type: `GET`
+
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+
 **LIST ALL USERS**
 
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/`
@@ -56,9 +63,9 @@ Request type: `GET`
 
 Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
 
-EDIT USER 
+**EDIT USER** 
 
-Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/_id_TARGET_ID`
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/_id`
 
 Request type: `PATCH`
 
@@ -73,7 +80,71 @@ Request body:
 
 **DELETE USER**
 
-Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/_id_TARGET_ID`
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/_id`
+
+Request type: `DELETE`
+
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+
+---
+
+**Managing accounts** `/accounts`
+
+**CREAT NEW ACCOUNT PROFILE**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/accounts`
+
+Request type: `POST`
+
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+
+Request body: 
+```
+{
+  "name": "String",
+  "isStaff": "String",
+  "staffId": "String",
+  "studentId": "String",
+  "clubId": "String",
+  "clubRole": "String",
+  "joinDate": "String"
+}
+```
+
+**LIST ONE ACCOUNT**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/accounts/_id`
+
+Request type: `GET`
+
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+
+**LIST ALL ACCOUNTS**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/accounts/`
+
+Request type: `GET`
+
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+
+**EDIT ACCOUNT**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/accounts/_id`
+
+Request type: `PATCH`
+
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+
+Request body:
+```
+[
+  {"propName": "FIELD_YOU_WANT_TO_EDIT", "value": "NEW_VALUE_OF_THAT_FIELD"}
+]
+```
+
+**DELETE ACCOUNT**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/accounts/_id`
 
 Request type: `DELETE`
 
