@@ -152,7 +152,7 @@ Request header: key `Content-Type` value `application/json` | key `Authorization
 
 ---
 
-**MANAGE CLUB DETAILS** `/clubs/
+**MANAGE CLUB DETAILS** `/clubs/`
 
 **Create new club details**
 
