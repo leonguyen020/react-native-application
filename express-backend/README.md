@@ -27,7 +27,7 @@ Request body:
 {
   "email": "String",
   "password": "String",
-  "accountId": "Number",
+  "accountId": "String",
 }
 ```
 
@@ -117,7 +117,7 @@ Request URL: `https://clubmanagementsystem-express.herokuapp.com/accounts/_id`
 
 Request type: `GET`
 
-Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+Request header: key `Content-Type` value `application/json`
 
 **List all accounts details**
 
@@ -125,7 +125,7 @@ Request URL: `https://clubmanagementsystem-express.herokuapp.com/accounts/`
 
 Request type: `GET`
 
-Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+Request header: key `Content-Type` value `application/json` 
 
 **Edit account details**
 
@@ -182,7 +182,7 @@ Request URL: `https://clubmanagementsystem-express.herokuapp.com/clubs/_id`
 
 Request type: `GET`
 
-Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+Request header: key `Content-Type` value `application/json`
 
 **List all clubs details**
 
@@ -190,7 +190,7 @@ Request URL: `https://clubmanagementsystem-express.herokuapp.com/clubs/`
 
 Request type: `GET`
 
-Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+Request header: key `Content-Type` value `application/json` 
 
 **Edit club details**
 
@@ -215,5 +215,69 @@ Request type: `DELETE`
 
 Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
 
+---
 
+**MANAGE SCHEDULES DETAILS** `/schedules/
 
+**Create new schedule details**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/schedules`
+
+Request type: `POST`
+
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+
+Request body: 
+```
+{
+  "clubId": "String",
+  "accountId": "String",
+  "time": "String",
+  "eventStart": "String",
+  "eventEnd": "Number",
+  "description": "String",
+  "porposalStatus": "String",
+  "submitDate": "String",
+  "reportStatus": "String",
+  "reportDate": "String",
+}
+```
+
+**List one schedule details**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/schedules/_id`
+
+Request type: `GET`
+
+Request header: key `Content-Type` value `application/json`
+
+**List all schedules details**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/schedules/`
+
+Request type: `GET`
+
+Request header: key `Content-Type` value `application/json`
+
+**Edit schedule details**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/schedules/_id`
+
+Request type: `PATCH`
+
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+
+Request body:
+```
+[
+  {"propName": "FIELD_YOU_WANT_TO_EDIT", "value": "NEW_VALUE_OF_THAT_FIELD"}
+]
+```
+
+**Delete schedule details**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/schedules/_id`
+
+Request type: `DELETE`
+
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
