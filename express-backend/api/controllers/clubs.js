@@ -62,30 +62,37 @@ exports.get_by_id = (req, res, next) => {
 }
 
 exports.get_by_rank = (req, res, next) => {
-    const rank = req.params.currRank;
-    Club.find({currRank: rank}).limit(1)
-        .select('-__v')
+    const rank = req.params.currRank
+    Club.find({currRank: rank})
+        .select('-__v') //Control which data you want to fetch, exclude the __v
         .exec()
-        .then(doc => {
-            console.log("From database", doc);
-            if (doc) {
-                res.status(200).json({
-                    club: doc,
-                    request: {
-                        type: 'GET',
-                        url: req.protocol + '://' + req.get('host') + req.originalUrl
+        .then(docs => {
+            const response = {
+                count: docs.length,
+                club: docs.map(doc => {
+                    return {
+                        clubId: doc.clubId,
+                        clubName: doc.clubName,
+                        president: doc.president,
+                        vice: doc.vice,
+                        finance: doc.finance,
+                        currPoint: doc.currPoint,
+                        currRank: doc.currRank,
+                        prevRank: doc.prevRank,
+                        staffId: doc.staffId,
+                        request: {
+                            type: 'GET',
+                            url: req.protocol + '://' + req.get('host') + req.originalUrl + doc._id //dynamic url get instead of hardcode
+                        }
                     }
-                });
-            } else {
-                res.status(404).json({
-                    message: 'No valid entry found for this ID'
-                });
-            }
+                })
+            };
+            res.status(200).json(response)
         })
         .catch(err => {
             console.log(err);
             res.status(500).json({error: err})
-        }); 
+        });
 }
 
 exports.post_club = (req, res, next) => {

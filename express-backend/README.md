@@ -192,6 +192,14 @@ Request type: `GET`
 
 Request header: key `Content-Type` value `application/json` 
 
+**List all clubs details by rank**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/clubs/rank/currRank_NAME`
+
+Request type: `GET`
+
+Request header: key `Content-Type` value `application/json` 
+
 **Edit club details**
 
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/clubs/_id`
@@ -246,6 +254,14 @@ Request body:
 **List one schedule details**
 
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/schedules/_id`
+
+Request type: `GET`
+
+Request header: key `Content-Type` value `application/json`
+
+**List one schedule details by clubId**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/schedules/clubId/_id`
 
 Request type: `GET`
 

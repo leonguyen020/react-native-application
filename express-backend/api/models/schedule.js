@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const scheduleSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    clubId: { type: Number, require: true },
-    accountId: { type: Number, require: true },
+    clubId: { type: String, require: true },
+    accountId: { type: String, require: true },
     time: { type: String, require: true},
     eventStart: { type: String, require: true },
     eventEnd: { type: String, require: true },
