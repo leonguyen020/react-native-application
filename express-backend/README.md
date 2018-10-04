@@ -234,7 +234,7 @@ Request body:
   "accountId": "String",
   "time": "String",
   "eventStart": "String",
-  "eventEnd": "Number",
+  "eventEnd": "String",
   "description": "String",
   "porposalStatus": "String",
   "submitDate": "String",
