@@ -50,8 +50,28 @@ Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/`
 
 Request type: `GET`
 
-Request header: 
-  key `Content-Type` value `application/json`
-  key `Authorization` value `Bearer YOUR_JWT`
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
 
+EDIT USER 
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/_id_TARGET_ID`
+
+Request type: `PATCH`
+
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+
+Request body:
+```
+[
+  {"propName": "FIELD_YOU_WANT_TO_EDIT", "value": "NEW_VALUE_OF_THAT_FIELD"}
+]
+```
+
+DELETE USER 
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/_id_TARGET_ID`
+
+Request type: `DELETE`
+
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
 
