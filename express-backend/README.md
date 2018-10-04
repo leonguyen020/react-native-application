@@ -10,7 +10,7 @@ Respone will be a JSON
 
 Home URL: `https://clubmanagementsystem-express.herokuapp.com`
 
-======
+---
 
 **Managing accounts** 
 
