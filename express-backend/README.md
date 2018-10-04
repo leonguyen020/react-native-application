@@ -13,9 +13,13 @@ Home URL: `https://clubmanagementsystem-express.herokuapp.com`
 Managing accounts `/users`
 
 SIGN UP
+
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/signup`
+
 Request type: `POST`
+
 Request header: key `Content-Type` value `application/json`
+
 Request body: 
 ```
 {
@@ -25,9 +29,13 @@ Request body:
 ```
 
 LOGIN
+
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/login`
+
 Request type: `POST`
+
 Request header: key `Content-Type` value `application/json`
+
 Request body:
 ```
 {
@@ -37,8 +45,11 @@ Request body:
 ```
 
 LIST ALL USERS
+
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/`
+
 Request type: `GET`
+
 Request header: 
   key `Content-Type` value `application/json`
   key `Authorization` value `Bearer YOUR_JWT`
