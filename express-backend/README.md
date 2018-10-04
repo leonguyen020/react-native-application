@@ -12,9 +12,9 @@ Home URL: `https://clubmanagementsystem-express.herokuapp.com`
 
 ---
 
-**Managing authoriaztion** `/users`
+**MANAGING AUTHORIZATION** `/users`
 
-**SIGN UP**
+**Sign up**
 
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/signup`
 
@@ -31,7 +31,7 @@ Request body:
 }
 ```
 
-**LOGIN**
+**Login**
 
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/login`
 
@@ -47,7 +47,7 @@ Request body:
 }
 ```
 
-**LIST ONE USER**
+**List one user**
 
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/_id`
 
@@ -55,7 +55,7 @@ Request type: `GET`
 
 Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
 
-**LIST ALL USERS**
+**List all users**
 
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/`
 
@@ -63,7 +63,7 @@ Request type: `GET`
 
 Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
 
-**EDIT USER** 
+**Edit user** 
 
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/_id`
 
@@ -78,7 +78,7 @@ Request body:
 ]
 ```
 
-**DELETE USER**
+**Delete user**
 
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/users/_id`
 
@@ -88,9 +88,9 @@ Request header: key `Content-Type` value `application/json` | key `Authorization
 
 ---
 
-**Managing accounts** `/accounts`
+**MANAGING ACCOUNTS DETAILS** `/accounts`
 
-**CREAT NEW ACCOUNT PROFILE**
+**Create new account details**
 
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/accounts`
 
@@ -111,7 +111,7 @@ Request body:
 }
 ```
 
-**LIST ONE ACCOUNT**
+**List one account details**
 
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/accounts/_id`
 
@@ -119,7 +119,7 @@ Request type: `GET`
 
 Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
 
-**LIST ALL ACCOUNTS**
+**List all accounts details**
 
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/accounts/`
 
@@ -127,7 +127,7 @@ Request type: `GET`
 
 Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
 
-**EDIT ACCOUNT**
+**Edit account details**
 
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/accounts/_id`
 
@@ -142,11 +142,78 @@ Request body:
 ]
 ```
 
-**DELETE ACCOUNT**
+**Delete account details**
 
 Request URL: `https://clubmanagementsystem-express.herokuapp.com/accounts/_id`
 
 Request type: `DELETE`
 
 Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+
+---
+
+**MANAGE CLUB DETAILS** `/clubs/
+
+**Create new club details**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/clubs`
+
+Request type: `POST`
+
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+
+Request body: 
+```
+{
+  "clubName": "String",
+  "president": "String",
+  "vice": "String",
+  "finance": "String",
+  "currPoint": "Number",
+  "currRank": "String",
+  "prevRank": "String",
+  "staffId": "String",
+}
+```
+
+**List one club details**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/clubs/_id`
+
+Request type: `GET`
+
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+
+**List all clubs details**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/clubs/`
+
+Request type: `GET`
+
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+
+**Edit club details**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/clubs/_id`
+
+Request type: `PATCH`
+
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+
+Request body:
+```
+[
+  {"propName": "FIELD_YOU_WANT_TO_EDIT", "value": "NEW_VALUE_OF_THAT_FIELD"}
+]
+```
+
+**Delete club details**
+
+Request URL: `https://clubmanagementsystem-express.herokuapp.com/clubs/_id`
+
+Request type: `DELETE`
+
+Request header: key `Content-Type` value `application/json` | key `Authorization` value `Bearer YOUR_JWT`
+
+
 
